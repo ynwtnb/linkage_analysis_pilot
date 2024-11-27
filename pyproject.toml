@@ -1,0 +1,37 @@
+[project]
+name = "linkage-analysis"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Yuna Watanabe", email = "yuna-watanabe1923@g.ecc.u-tokyo.ac.jp" }
+]
+dependencies = [
+    "pandas>=2.2.3",
+    "numpy==1.26.4",
+    "matplotlib>=3.9.2",
+    "ipykernel>=6.29.5",
+    "tqdm>=4.66.6",
+    "scipy>=1.14.1",
+    "plotly>=5.24.1",
+    "pyedflib>=0.1.38",
+    "dash-bootstrap-components>=1.6.0",
+    "openpyxl>=3.1.5",
+    "pycwt>=0.4.0b0",
+    "flirt>=0.0.2",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = []
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/linkage_analysis"]
