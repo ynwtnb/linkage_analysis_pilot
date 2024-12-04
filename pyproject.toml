@@ -18,6 +18,13 @@ dependencies = [
     "openpyxl>=3.1.5",
     "pycwt>=0.4.0b0",
     "flirt>=0.0.2",
+    "datasets>=3.1.0",
+    "soundfile>=0.12.1",
+    "transformers>=4.46.3",
+    "torch>=2.2.2",
+    "librosa>=0.10.2.post1",
+    "pydub>=0.25.1",
+    "torchaudio>=2.2.2",
 ]
 readme = "README.md"
 requires-python = ">= 3.8"

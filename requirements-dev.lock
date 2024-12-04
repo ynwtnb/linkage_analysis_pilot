@@ -10,6 +10,13 @@
 #   universal: false
 
 -e file:.
+aiohappyeyeballs==2.4.4
+    # via aiohttp
+aiohttp==3.11.9
+    # via datasets
+    # via fsspec
+aiosignal==1.3.1
+    # via aiohttp
 appnope==0.1.4
     # via ipykernel
 astropy==6.1.6
@@ -18,10 +25,16 @@ astropy-iers-data==0.2024.11.18.0.35.2
     # via astropy
 asttokens==2.4.1
     # via stack-data
+attrs==24.2.0
+    # via aiohttp
+audioread==3.0.1
+    # via librosa
 blinker==1.8.2
     # via flask
 certifi==2024.8.30
     # via requests
+cffi==1.17.1
+    # via soundfile
 charset-normalizer==3.4.0
     # via requests
 click==8.1.7
@@ -46,22 +59,45 @@ dash-html-components==2.0.0
     # via dash
 dash-table==5.0.0
     # via dash
+datasets==3.1.0
+    # via linkage-analysis
 debugpy==1.8.7
     # via ipykernel
 decorator==5.1.1
     # via ipython
+    # via librosa
+dill==0.3.8
+    # via datasets
+    # via multiprocess
 et-xmlfile==2.0.0
     # via openpyxl
 executing==2.1.0
     # via stack-data
+filelock==3.16.1
+    # via datasets
+    # via huggingface-hub
+    # via torch
+    # via transformers
 flask==3.0.3
     # via dash
 flirt==0.0.2
     # via linkage-analysis
 fonttools==4.54.1
     # via matplotlib
+frozenlist==1.5.0
+    # via aiohttp
+    # via aiosignal
+fsspec==2024.9.0
+    # via datasets
+    # via huggingface-hub
+    # via torch
+huggingface-hub==0.26.3
+    # via datasets
+    # via tokenizers
+    # via transformers
 idna==3.10
     # via requests
+    # via yarl
 importlib-metadata==8.5.0
     # via dash
 ipykernel==6.29.5
@@ -76,8 +112,11 @@ jedi==0.19.1
     # via ipython
 jinja2==3.1.4
     # via flask
+    # via torch
 joblib==1.4.2
     # via flirt
+    # via librosa
+    # via scikit-learn
 jupyter-client==8.6.3
     # via ipykernel
 jupyter-core==5.7.2
@@ -85,6 +124,10 @@ jupyter-core==5.7.2
     # via jupyter-client
 kiwisolver==1.4.7
     # via matplotlib
+lazy-loader==0.4
+    # via librosa
+librosa==0.10.2.post1
+    # via linkage-analysis
 llvmlite==0.43.0
     # via numba
 markupsafe==3.0.2
@@ -96,16 +139,30 @@ matplotlib==3.9.2
 matplotlib-inline==0.1.7
     # via ipykernel
     # via ipython
+mpmath==1.3.0
+    # via sympy
+msgpack==1.1.0
+    # via librosa
+multidict==6.1.0
+    # via aiohttp
+    # via yarl
+multiprocess==0.70.16
+    # via datasets
 nest-asyncio==1.6.0
     # via dash
     # via ipykernel
+networkx==3.4.2
+    # via torch
 numba==0.60.0
     # via flirt
+    # via librosa
 numpy==1.26.4
     # via astropy
     # via contourpy
+    # via datasets
     # via flirt
     # via ishneholterlib
+    # via librosa
     # via linkage-analysis
     # via matplotlib
     # via numba
@@ -113,15 +170,24 @@ numpy==1.26.4
     # via pycwt
     # via pyedflib
     # via pyerfa
+    # via scikit-learn
     # via scipy
+    # via soxr
+    # via transformers
 openpyxl==3.1.5
     # via linkage-analysis
 packaging==24.1
     # via astropy
+    # via datasets
+    # via huggingface-hub
     # via ipykernel
+    # via lazy-loader
     # via matplotlib
     # via plotly
+    # via pooch
+    # via transformers
 pandas==2.2.3
+    # via datasets
     # via flirt
     # via linkage-analysis
 parso==0.8.4
@@ -132,18 +198,30 @@ pillow==11.0.0
     # via matplotlib
 platformdirs==4.3.6
     # via jupyter-core
+    # via pooch
 plotly==5.24.1
     # via dash
     # via linkage-analysis
+pooch==1.8.2
+    # via librosa
 prompt-toolkit==3.0.48
     # via ipython
+propcache==0.2.1
+    # via aiohttp
+    # via yarl
 psutil==6.1.0
     # via ipykernel
 ptyprocess==0.7.0
     # via pexpect
 pure-eval==0.2.3
     # via stack-data
+pyarrow==18.1.0
+    # via datasets
+pycparser==2.22
+    # via cffi
 pycwt==0.4.0b0
+    # via linkage-analysis
+pydub==0.25.1
     # via linkage-analysis
 pyedflib==0.1.38
     # via linkage-analysis
@@ -161,34 +239,68 @@ pytz==2024.2
     # via pandas
 pyyaml==6.0.2
     # via astropy
+    # via datasets
+    # via huggingface-hub
+    # via transformers
 pyzmq==26.2.0
     # via ipykernel
     # via jupyter-client
+regex==2024.11.6
+    # via transformers
 requests==2.32.3
     # via dash
+    # via datasets
+    # via huggingface-hub
+    # via pooch
+    # via transformers
 retrying==1.3.4
     # via dash
+safetensors==0.4.5
+    # via transformers
+scikit-learn==1.5.2
+    # via librosa
 scipy==1.14.1
     # via flirt
+    # via librosa
     # via linkage-analysis
     # via pycwt
+    # via scikit-learn
 setuptools==75.3.0
     # via dash
 six==1.16.0
     # via asttokens
     # via python-dateutil
     # via retrying
+soundfile==0.12.1
+    # via librosa
+    # via linkage-analysis
+soxr==0.5.0.post1
+    # via librosa
 stack-data==0.6.3
     # via ipython
+sympy==1.13.3
+    # via torch
 tenacity==9.0.0
     # via plotly
+threadpoolctl==3.5.0
+    # via scikit-learn
+tokenizers==0.20.3
+    # via transformers
+torch==2.2.2
+    # via linkage-analysis
+    # via torchaudio
+torchaudio==2.2.2
+    # via linkage-analysis
 tornado==6.4.1
     # via ipykernel
     # via jupyter-client
 tqdm==4.66.6
+    # via datasets
     # via flirt
+    # via huggingface-hub
     # via linkage-analysis
     # via pycwt
+    # via transformers
 traitlets==5.14.3
     # via comm
     # via ipykernel
@@ -196,8 +308,13 @@ traitlets==5.14.3
     # via jupyter-client
     # via jupyter-core
     # via matplotlib-inline
+transformers==4.46.3
+    # via linkage-analysis
 typing-extensions==4.12.2
     # via dash
+    # via huggingface-hub
+    # via librosa
+    # via torch
 tzdata==2024.2
     # via pandas
 urllib3==2.2.3
@@ -207,5 +324,9 @@ wcwidth==0.2.13
 werkzeug==3.0.6
     # via dash
     # via flask
+xxhash==3.5.0
+    # via datasets
+yarl==1.18.3
+    # via aiohttp
 zipp==3.20.2
     # via importlib-metadata
